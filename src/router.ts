@@ -19,9 +19,9 @@ const router = createRouter({
       component: () => import("./views/GridViewNoMore.vue"),
     },
     {
-      path: "/test-1",
+      path: "/chin-timeline",
       name: "textOne",
-      component: () => import("./views/TestOne.vue"),
+      component: () => import("./views/ChinTimeLine.vue"),
     },
   ],
 });
