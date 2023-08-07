@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { inject } from "vue";
 import { onMounted } from "vue";
 import { rnd } from "@/utils";
 
-const minicards = ref(1);
+const minicards = inject("miniCardCount");
 
 onMounted(() => {
-  minicards.value = rnd(25);
+  minicards.value = rnd(15);
 });
 </script>
 
