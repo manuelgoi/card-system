@@ -1,6 +1,6 @@
 <template>
   <div
-    class="rounded-md bg-gray-50 p-4 shadow-md"
+    class="rounded-md border border-gray-300 bg-white p-4"
     :style="{ gridRow: spanRow }"
   >
     <div
