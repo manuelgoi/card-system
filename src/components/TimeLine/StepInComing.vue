@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="[index !== totalGroups - 1 ? 'pb-10' : '']">
     <div
       v-if="index !== totalGroups - 1"
       class="absolute left-4 top-4 -ml-px mt-0.5 h-full w-0.5 bg-gray-300"

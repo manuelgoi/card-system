@@ -10,6 +10,7 @@ export interface TimeGroup {
   sort: number;
   name: string;
   status: Status;
+  type: EventType;
 }
 
 export enum EventCode {
@@ -28,8 +29,8 @@ export enum EventCode {
 }
 
 export enum EventType {
-  STATUS = "STATUS",
-  INCIDENCE = "INCIDENCE",
+  STATUS = "status",
+  INCIDENCE = "incidence",
 }
 export interface TimeEvent {
   code: EventCode;

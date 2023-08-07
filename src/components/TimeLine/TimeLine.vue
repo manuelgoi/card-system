@@ -6,7 +6,7 @@
           v-for="(group, stepIdx) in groupsWithNames"
           :key="group.id"
           :class="[
-            stepIdx !== groupsWithNames.length - 1 ? 'pb-10' : '',
+            stepIdx !== groupsWithNames.length - 1 ? '' : '',
             'relative',
           ]"
         >
