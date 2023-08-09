@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref, inject } from "vue";
+import { inject } from "vue";
 import { onMounted } from "vue";
 import { rnd } from "@/utils";
 
 const minicards = inject("miniCardCount");
+const props = defineProps(["count"]);
 
 onMounted(() => {
-  minicards.value = rnd(15);
+  const def = Number(props.count);
+  minicards.value = def > 0 ? def : rnd(15);
 });
 </script>
 

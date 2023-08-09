@@ -7,6 +7,7 @@ import GridMiniCardLayout from "@/components/GridMiniCardLayout.vue";
 import Minicard from "@/components/Minicard.vue";
 import { esPrimo } from "@/utils";
 import CardLogisticDetails from "@/components/CardLogisticDetails.vue";
+import CardTags from "@/components/CardTags.vue";
 </script>
 
 <template>
@@ -19,6 +20,10 @@ import CardLogisticDetails from "@/components/CardLogisticDetails.vue";
     </GridMiniCardLayout>
     <GridCardLayout>
       <CardLogisticDetails class="col-span-3" />
+      <CardTags />
+      <CardBoxViewMore count="1bis">
+        <VerticalContent count="3" />
+      </CardBoxViewMore>
       <CardBoxViewMore
         v-for="n in 25"
         :key="n"

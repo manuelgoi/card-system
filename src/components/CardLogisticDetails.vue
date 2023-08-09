@@ -1,10 +1,10 @@
 <template>
-  <section class="rounded-md border border-gray-300 text-sm">
-    <header class="border border-b-gray-300 px-4 py-2">
+  <section class="flex flex-col rounded-md border border-gray-300 text-sm">
+    <header class="border-b border-b-gray-300 px-4 py-2">
       <h3 class="font-medium text-gray-900">Logistics Details</h3>
     </header>
     <main
-      class="grid grid-cols-1 divide-y divide-gray-300 md:grid-cols-2 md:divide-x lg:grid-cols-[1fr_1fr_min-content]"
+      class="grid flex-1 grid-cols-1 divide-y divide-gray-300 sm:divide-y-0 md:grid-cols-2 md:divide-x lg:grid-cols-3"
     >
       <!-- Customer info -->
       <div class="flex flex-col">
@@ -116,7 +116,7 @@
       <!-- Map -->
       <div class="md:col-span-2 lg:col-auto">
         <img
-          class="hidden max-h-[350px] max-w-[290px] lg:block"
+          class="hidden h-full w-full object-cover lg:block"
           :src="mapUrlPortrait"
           alt="Google Map with Marker"
         />
@@ -145,7 +145,8 @@ const mapUrlPortrait = computed(() => {
   const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_TOKEN;
   const center = { lat: 48.8566, lng: 2.3522 };
   const zoom = 15;
-  const size = "290x350";
+  // const size = "290x350";
+  const size = "300x400";
   const markerLocation = `${center.lat},${center.lng}`;
   return `https://maps.googleapis.com/maps/api/staticmap?center=${center.lat},${center.lng}&zoom=${zoom}&size=${size}&markers=${markerLocation}&key=${API_KEY}`;
 });
