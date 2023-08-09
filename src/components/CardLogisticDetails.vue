@@ -1,5 +1,7 @@
 <template>
-  <section class="flex flex-col rounded-md border border-gray-300 text-sm">
+  <section
+    class="flex h-full flex-col rounded-md border border-gray-300 text-sm"
+  >
     <header class="border-b border-b-gray-300 px-4 py-2">
       <h3 class="font-medium text-gray-900">Logistics Details</h3>
     </header>
@@ -114,18 +116,17 @@
         </section>
       </div>
       <!-- Map -->
-      <div class="md:col-span-2 lg:col-auto">
-        <img
-          class="hidden h-full w-full object-cover lg:block"
-          :src="mapUrlPortrait"
-          alt="Google Map with Marker"
-        />
-        <img
-          class="h-full w-full lg:hidden"
-          :src="mapUrlLandScape"
-          alt="Google Map with Marker"
-        />
-      </div>
+      <div
+        class="hidden bg-cover bg-center md:col-span-2 lg:col-auto lg:block"
+        :style="`background-image: url('${mapUrlPortrait}');`"
+      />
+      <div
+        class="bg-cover bg-center md:col-span-2 lg:col-auto lg:hidden"
+        :style="{
+          minHeight: `${rowHeight}px`,
+          backgroundImage: `url(${mapUrlLandScape})`,
+        }"
+      />
     </main>
   </section>
 </template>
@@ -140,7 +141,9 @@ import {
   HomeIcon,
   BuildingStorefrontIcon,
 } from "@heroicons/vue/24/outline";
+import { useGridCardLayout } from "@/components/GridCardLayout";
 
+const { rowHeight } = useGridCardLayout();
 const mapUrlPortrait = computed(() => {
   const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_TOKEN;
   const center = { lat: 48.8566, lng: 2.3522 };

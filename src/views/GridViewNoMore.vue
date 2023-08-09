@@ -2,7 +2,7 @@
 import CardBox from "@/components/CardBox.vue";
 import VerticalContent from "@/components/VerticalContent.vue";
 import VerticalContentTwoCols from "@/components/VerticalContentTwoCols.vue";
-import GridCardLayout from "@/components/GridCardLayout.vue";
+import GridCardLayout from "@/components/GridCardLayout/MainComponent.vue";
 import { esPrimo } from "@/utils";
 </script>
 
