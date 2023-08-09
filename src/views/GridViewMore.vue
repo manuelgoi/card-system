@@ -8,6 +8,7 @@ import Minicard from "@/components/Minicard.vue";
 import { esPrimo } from "@/utils";
 import CardLogisticDetails from "@/components/CardLogisticDetails.vue";
 import CardTags from "@/components/CardTags.vue";
+import CardTeam from "@/components/CardTeam.vue";
 </script>
 
 <template>
@@ -18,20 +19,20 @@ import CardTags from "@/components/CardTags.vue";
       <Minicard />
       <Minicard />
     </GridMiniCardLayout>
-    <GridCardLayout>
+    <GridCardLayout :row-height="200" v-slot="{ rowHeight }">
       <CardLogisticDetails
-        class="row-span-3 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-1"
+        :row-height="rowHeight"
+        class="row-span-5 md:col-span-2 md:row-span-4 lg:col-span-3 lg:row-span-2"
       />
-      <CardTags />
-      <CardBoxViewMore id="1bis">
-        <VerticalContent id="3" />
-      </CardBoxViewMore>
+      <CardTags :row-height="rowHeight" />
+      <CardTeam :row-height="rowHeight" />
       <CardBoxViewMore
         v-for="n in 25"
         :key="n"
         :id="n.toString()"
+        :row-height="rowHeight"
         :data-index="n"
-        :class="esPrimo(n) && `col-span-1 md:col-span-2`"
+        :class="['row-span-2', { 'col-span-1 md:col-span-2': esPrimo(n) }]"
       >
         <VerticalContentTwoCols v-if="esPrimo(n)" />
         <VerticalContent v-else />

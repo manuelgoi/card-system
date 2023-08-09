@@ -4,11 +4,11 @@
     :style="{ gridRow: value ? 'span 2/span 2' : 'span 1/span 1' }"
   >
     <header class="border-b border-b-gray-300 px-4 py-2">
-      <h3 class="font-medium text-gray-900">Tags</h3>
+      <h3 class="font-medium text-gray-900">Team</h3>
     </header>
     <main class="flex flex-1 flex-col items-center justify-center">
-      <InformationCircleIcon class="h-12 w-12 text-slate-400" />
-      <p class="text-sm text-slate-500">No Tags added yet</p>
+      <UsersIcon class="h-12 w-12 text-slate-400" />
+      <p class="text-sm text-slate-500">No team assigned</p>
     </main>
     <footer
       class="flex items-center justify-end border-t border-t-gray-300 px-4 py-2"
@@ -24,7 +24,7 @@
   </section>
 </template>
 <script setup lang="ts">
-import { InformationCircleIcon } from "@heroicons/vue/24/outline";
+import { UsersIcon } from "@heroicons/vue/24/outline";
 import { useToggle } from "@vueuse/core";
 
 defineProps<{

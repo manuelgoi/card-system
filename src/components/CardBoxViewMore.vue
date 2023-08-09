@@ -31,14 +31,14 @@ import { ref, onBeforeMount, nextTick, watchEffect, provide } from "vue";
 import { getRandomBgColor, roundDecimal } from "@/utils";
 import { EMPTY_STRING } from "@/components/TimeLine/TimeLine.constants";
 
-defineProps<{
+const props = defineProps<{
   id: string;
+  rowHeight: number;
 }>();
 
-const HEIGHT: Readonly<number> = 345;
 const miniCardCount = ref(1);
 const viewMore = ref(false);
-const spanRow = ref("span 1/span 1");
+const spanRow = ref("span 2/span 2");
 const overflowEl = ref<HTMLElement | null>(null);
 const content = ref<HTMLElement | null>(null);
 const card = ref<HTMLElement | null>(null);
@@ -64,12 +64,12 @@ onBeforeMount(() => {
 function handleViewMore() {
   viewMore.value = !viewMore.value;
   if (viewMore.value) {
-    const contentHeight = overflowEl.value?.scrollHeight ?? HEIGHT;
-    let spans = roundDecimal(contentHeight / HEIGHT);
-    spans = spans > 1 ? spans : 2;
+    const contentHeight = overflowEl.value?.scrollHeight ?? props.rowHeight;
+    let spans = Math.ceil(contentHeight / props.rowHeight);
+    spans = spans > 2 ? spans : 2;
     spanRow.value = `span ${spans} / span ${spans}`;
   } else {
-    spanRow.value = "span 1/span 1";
+    spanRow.value = "span 2/span 2";
   }
 }
 </script>

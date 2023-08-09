@@ -141,9 +141,11 @@ import {
   HomeIcon,
   BuildingStorefrontIcon,
 } from "@heroicons/vue/24/outline";
-import { useGridCardLayout } from "@/components/GridCardLayout";
 
-const { rowHeight } = useGridCardLayout();
+defineProps<{
+  rowHeight?: number;
+}>();
+
 const mapUrlPortrait = computed(() => {
   const API_KEY = import.meta.env.VITE_APP_GOOGLE_MAPS_TOKEN;
   const center = { lat: 48.8566, lng: 2.3522 };
