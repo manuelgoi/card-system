@@ -4,20 +4,22 @@ import VerticalContent from "@/components/VerticalContent.vue";
 import VerticalContentTwoCols from "@/components/VerticalContentTwoCols.vue";
 import GridCardLayout from "@/components/GridCardLayout";
 import GridMiniCardLayout from "@/components/GridMiniCardLayout.vue";
-import Minicard from "@/components/Minicard.vue";
+import MiniCard from "@/components/MiniCard.vue";
 import { esPrimo } from "@/utils";
 import CardLogisticDetails from "@/components/CardLogisticDetails.vue";
 import CardTags from "@/components/CardTags.vue";
 import CardTeam from "@/components/CardTeam.vue";
+import PepeLol from "@/components/TimeLine/PepeLol.vue";
 </script>
 
 <template>
   <div>
+    <PepeLol />
     <GridMiniCardLayout>
-      <Minicard />
-      <Minicard />
-      <Minicard />
-      <Minicard />
+      <MiniCard />
+      <MiniCard />
+      <MiniCard />
+      <MiniCard />
     </GridMiniCardLayout>
     <GridCardLayout :row-height="200" v-slot="{ rowHeight }">
       <CardLogisticDetails

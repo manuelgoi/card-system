@@ -28,7 +28,7 @@
 
 <script setup lang="ts">
 import { ref, onBeforeMount, nextTick, watchEffect, provide } from "vue";
-import { getRandomBgColor, roundDecimal } from "@/utils";
+import { getRandomBgColor } from "@/utils";
 import { EMPTY_STRING } from "@/components/TimeLine/TimeLine.constants";
 
 const props = defineProps<{
