@@ -1,5 +1,6 @@
 export const rnd = (max: number) => Math.floor(Math.random() * max) + 1;
 export function roundDecimal(decimal: number) {
+  console.log(decimal)
   const integer = Math.floor(decimal);
   const decimals = decimal % 1;
 
