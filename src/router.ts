@@ -23,6 +23,21 @@ const router = createRouter({
       name: "textOne",
       component: () => import("./views/ChinTimeLine.vue"),
     },
+    {
+      path: "/scanner",
+      name: "scanner",
+      component: () => import("./views/ScannerWeb.vue"),
+    },
+    {
+      path: "/bar-scanner",
+      name: "barScanner",
+      component: () => import("./views/BarScanner.vue"),
+    },
+    {
+      path: "/test-bar-scanner",
+      name: "testBarScanner",
+      component: () => import("./views/TestBarScanner.vue"),
+    },
   ],
 });
 
